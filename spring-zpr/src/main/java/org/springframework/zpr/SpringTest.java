@@ -86,8 +86,18 @@ public class SpringTest {
 //		UserService userService = (UserService)context.getBean("userService");
 //		System.out.println(userService);
 
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		Object userService = context.getBean("userService");
+//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+//		Object userService = context.getBean("userService");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		UserService userService = (UserService) context.getBean("userService");
+		System.out.println(userService);
+	}
+
+	@Test
+	public void testMerged() {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		UserService userService = (UserService) context.getBean("userService");
+		System.out.println(userService);
 
 	}
 
