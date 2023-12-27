@@ -3,6 +3,8 @@ group = 'org.springframework.zpr'
 version = '5.3.7'
 
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     compile(project(":spring-context"))
     compile(project(":spring-core"))
     compile(project(":spring-beans"))

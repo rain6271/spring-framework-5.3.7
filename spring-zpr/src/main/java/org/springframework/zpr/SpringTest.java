@@ -1,5 +1,6 @@
 package org.springframework.zpr;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -88,4 +89,5 @@ public class SpringTest {
 		Object userService = context.getBean("userService");
 
 	}
+
 }
