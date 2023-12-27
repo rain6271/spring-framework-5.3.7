@@ -344,7 +344,10 @@ public class CommonAnnotationBeanPostProcessor extends InitDestroyAnnotationBean
 					if (metadata != null) {
 						metadata.clear(pvs);
 					}
+
+					//主要看这个方法，点击进入
 					metadata = buildResourceMetadata(clazz);
+					//放到缓存中后续会用到
 					this.injectionMetadataCache.put(cacheKey, metadata);
 				}
 			}

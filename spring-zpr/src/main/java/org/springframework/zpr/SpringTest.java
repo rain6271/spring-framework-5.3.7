@@ -56,7 +56,7 @@ public class SpringTest {
 //		Resource[] resources = context.getResources("file:D:\\spring-source\\spring-framework-5.3.7\\spring-zpr\\build\\classes\\java\\main\\org\\springframework\\zpr\\bean");
 //		DefaultResourceLoader resourceLoader = new DefaultResourceLoader();
 //		for (Resource resource : resources) {
-//			File file = resource.getFile();
+//			File file = resource.getFile();【
 //			if (file.isDirectory()) {
 //				File[] files = file.listFiles();
 //				for (File file1 : files) {
