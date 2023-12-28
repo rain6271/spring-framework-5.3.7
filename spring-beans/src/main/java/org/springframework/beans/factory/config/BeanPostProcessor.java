@@ -55,6 +55,7 @@ import org.springframework.lang.Nullable;
  * @see ConfigurableBeanFactory#addBeanPostProcessor
  * @see BeanFactoryPostProcessor
  */
+// 作用与初始化阶段 对应第三生命周期
 public interface BeanPostProcessor {
 
 	/**

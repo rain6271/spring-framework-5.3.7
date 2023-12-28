@@ -93,6 +93,7 @@ public class SpringTest {
 		System.out.println(userService);
 	}
 
+	// 测试合并
 	@Test
 	public void testMerged() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
@@ -101,8 +102,17 @@ public class SpringTest {
 
 	}
 
+	// 测试Spring生命周期
 	@Test
-	public void testMerged() {
+	public void testMerged1() {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		UserService userService = (UserService) context.getBean("userService");
+		System.out.println(userService);
+
+	}
+
+	@Test
+	public void testMerged2() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Object userService = context.getBean("userService");
 	}
