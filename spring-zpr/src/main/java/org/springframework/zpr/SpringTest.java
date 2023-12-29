@@ -15,6 +15,7 @@ import org.springframework.core.type.ClassMetadata;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.SimpleMetadataReaderFactory;
 import org.springframework.zpr.bean.UserService;
+import org.springframework.zpr.cycle.Person;
 
 import java.io.File;
 import java.io.IOException;
@@ -115,6 +116,16 @@ public class SpringTest {
 	public void testMerged2() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Object userService = context.getBean("userService");
+	}
+
+
+	// 测试Spring生命周期
+	@Test
+	public void testCycle1() {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		Person person = (Person) context.getBean("person");
+		System.out.println(person);
+
 	}
 
 

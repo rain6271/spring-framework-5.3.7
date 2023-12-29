@@ -156,10 +156,16 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	/** String resolvers to apply e.g. to annotation attribute values. */
 	private final List<StringValueResolver> embeddedValueResolvers = new CopyOnWriteArrayList<>();
 
+
+
 	/** BeanPostProcessors to apply. */
+	//     在AbstractBeanFactory的字段beanPostProcessors里，它是个CopyOnWriteArrayList,最终
+	//     所有BeanPostProcessor都会从这个List里面拿出来执行。
 	private final List<BeanPostProcessor> beanPostProcessors = new BeanPostProcessorCacheAwareList();
 
 	/** Cache of pre-filtered post-processors. */
+
+	// beanPostProcessors缓存
 	@Nullable
 	private volatile BeanPostProcessorCache beanPostProcessorCache;
 

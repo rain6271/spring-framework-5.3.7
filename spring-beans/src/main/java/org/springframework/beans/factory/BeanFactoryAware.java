@@ -38,6 +38,7 @@ import org.springframework.beans.BeansException;
  * @see InitializingBean
  * @see org.springframework.context.ApplicationContextAware
  */
+// Bean级生命周期接口方法
 public interface BeanFactoryAware extends Aware {
 
 	/**

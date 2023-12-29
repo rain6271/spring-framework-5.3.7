@@ -33,6 +33,7 @@ package org.springframework.beans.factory;
  * @see BeanFactoryAware
  * @see InitializingBean
  */
+// Bean级生命周期接口方法
 public interface BeanNameAware extends Aware {
 
 	/**

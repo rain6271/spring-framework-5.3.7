@@ -31,6 +31,7 @@ package org.springframework.beans.factory;
  * @see org.springframework.beans.factory.config.BeanDefinition#getPropertyValues()
  * @see org.springframework.beans.factory.support.AbstractBeanDefinition#getInitMethodName()
  */
+// Bean级生命周期接口方法
 public interface InitializingBean {
 
 	/**

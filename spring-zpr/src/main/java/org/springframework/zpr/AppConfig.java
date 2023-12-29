@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.zpr.bean.User;
+import org.springframework.zpr.cycle.Person;
 import org.springframework.zpr.entity.StringToUserPropertyEditor;
 
 import java.beans.PropertyEditor;
@@ -20,21 +21,26 @@ import java.util.Map;
  * @date 2023/11/29 16:23
  */
 //@PropertySource("classpath:spring.properties")
-@ComponentScan("org.springframework.zpr.bean")
+@ComponentScan("org.springframework.zpr.cycle")
 public class AppConfig {
-    @Bean
-    public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename("messages");
-        return messageSource;
-    }
+//    @Bean
+//    public MessageSource messageSource() {
+//        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+//        messageSource.setBasename("messages");
+//        return messageSource;
+//    }
+//
+//    @Bean
+//    public CustomEditorConfigurer customEditorConfigurer() {
+//        CustomEditorConfigurer customEditorConfigurer = new CustomEditorConfigurer();
+//        Map<Class<?>, Class<? extends PropertyEditor>> customEditorMap = new HashMap<>();
+//        customEditorMap.put(User.class, StringToUserPropertyEditor.class);
+//        customEditorConfigurer.setCustomEditors(customEditorMap);
+//        return customEditorConfigurer;
+//    }
 
-    @Bean
-    public CustomEditorConfigurer customEditorConfigurer() {
-        CustomEditorConfigurer customEditorConfigurer = new CustomEditorConfigurer();
-        Map<Class<?>, Class<? extends PropertyEditor>> customEditorMap = new HashMap<>();
-        customEditorMap.put(User.class, StringToUserPropertyEditor.class);
-        customEditorConfigurer.setCustomEditors(customEditorMap);
-        return customEditorConfigurer;
-    }
+	@Bean(initMethod = "myInit", destroyMethod = "myDestory")
+	public Person person() {
+		return new Person();
+	}
 }
